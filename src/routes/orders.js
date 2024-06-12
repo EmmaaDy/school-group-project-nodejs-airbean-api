@@ -1,47 +1,51 @@
+// routes/orders.js
+
 import { Router } from "express";
-import { getOrdersByCustomerId, getOrderByOrderId } from "../controller/order.js";
-import authenticate from "../middleware/auth.js";
+import { placeOrder, getOrdersByCustomerId, getOrderByCartId } from "../controller/order.js";
+import { authenticate } from "../middleware/auth.js";
 
 const router = Router();
 
-//Sök order genom att ange order-id. Använd authenticate middleware för att kontrollera att användaren är inloggad.:
-router.get("/:id", authenticate, async (req, res) => {
+// Place order
+router.post("/", placeOrder);
+
+// Endpoint for fetching order history for a specific customer
+router.get("/:customerId", authenticate, async (req, res) => {
   try {
-    const order = await getOrdersByCustomerId(req.params.id);
-    if (order) {
-      res.json({ order })
+    const customerId = req.params.customerId;
+    const orders = await getOrdersByCustomerId(customerId);
+    if (orders) {
+      res.json({ orders });
     } else {
-      res.status(404).json({ message: "Order not found" });
+      res.status(404).json({ message: "Order history not found" });
     }
   } catch (error) {
-    res.status(500).json({ message: "Error fetching order", error: error.message });
+    res.status(500).json({ message: "Error fetching order history", error: error.message });
   }
 });
 
-//Sök order genom att ange order-id:
-router.get("/confirmation/:id", async (req, res) => {
+// Endpoint for fetching order confirmation by cart ID
+router.get("/confirmation/:cartId", async (req, res) => {
   try {
-    const orderId = req.params.id;
-    const order = await getOrderByOrderId(orderId);
+    const cartId = req.params.cartId;
+    const order = await getOrderByCartId(cartId);
     if (order) {
-      //Beräkna tid för leverans (20 min)
+      // Calculate delivery time (20 minutes)
       const orderDate = new Date(order.date);
-      const deliveryDate = new Date(orderDate.getTime() + 20 * 60000); //Räkna om till millisekunder
-      // Gör formatet till HH:MM
+      const deliveryDate = new Date(orderDate.getTime() + 20 * 60000); // Convert to milliseconds
+      // Format as HH:MM
       const deliveryTime = deliveryDate.toLocaleTimeString([], {
         hour: "2-digit",
         minute: "2-digit",
       });
 
-      // Returnera order med leveranstid
+      // Return order with delivery time
       res.json({ ...order, deliveryTime });
     } else {
       res.status(404).json({ message: "Order not found" });
     }
   } catch (error) {
-    res
-      .status(500)
-      .json({ message: "Error fetching order", error: error.message });
+    res.status(500).json({ message: "Error fetching order", error: error.message });
   }
 });
 
