@@ -8,6 +8,3 @@
 {"title":"Macchiato","desc":"En macchiato med en skvätt mjölk.","price":30,"_id":"dy1JqGCeAYWaJqri"}
 {"title":"Cold Brew","desc":"Kallbryggt kaffe för en uppfriskande smakupplevelse.","price":42,"_id":"lN2tmDgmhBl1Mc6k"}
 {"title":"Cappuccino","desc":"En krämig cappuccino med skummad mjölk.","price":45,"_id":"nG7UZ7wTTM0wm64Q"}
-{"title":"Gustav Adolf Bakelse","desc":"En krämig god bakelse.","price":25,"createdAt":"2024-06-12T17:47:56.904Z","_id":"s5GR9b9WGJ4NVYiy"}
-{"title":"Gustav Adolf Bakelse","desc":"En krämig god bakelse.","price":25,"createdAt":"2024-06-12T17:48:30.434Z","_id":"ALIc2G7ovFLG9i0C"}
-{"title":"Bryggkaffe","desc":"En kopp med husets bryggmalet.","price":32,"_id":"XxbJYtuWvSY6xPu0","modifiedAt":"2024-06-12T17:48:56.363Z"}
