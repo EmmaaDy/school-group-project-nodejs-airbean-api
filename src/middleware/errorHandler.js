@@ -1,8 +1,9 @@
 const errorHandler = (err, req, res, next) => {
-  res.status(404).json({
+  console.error(err.stack);
+  res.status(err.status || 500).json({
     message: err.message,
+    error: err.stack,
   });
-  next()
 };
 
 export default errorHandler;
