@@ -503,16 +503,6 @@ Logga in som i punkt 2.
 }
 ``` 
 
-### 1.4. Som admin vill jag kunna ta bort en produkt från menyn ###
-#### DELETE - /menu/Bryggkaffe ####
-##### Response #####
-```
-{
-	"message": "Menu item deleted successfully",
-	"item": "Bryggkaffe"
-}
-```
-
 ### 2.1. Som admin vill jag kunna lägga till kampanjerbjudande ###
 #### POST - /admin/offering/ ####
 ##### Response #####
@@ -538,5 +528,14 @@ Logga in som i punkt 2.
 	"createdAt": "2024-06-12T15:46:52.395Z",
 	"_id": "ZKkffCFCNWrnCX7E"
 	}
+}
+```
+### 2.2. Som admin vill jag kunna ta bort en produkt från menyn ###
+#### DELETE - /menu/Bryggkaffe ####
+##### Response #####
+```
+{
+	"message": "Menu item deleted successfully",
+	"item": "Bryggkaffe"
 }
 ```
