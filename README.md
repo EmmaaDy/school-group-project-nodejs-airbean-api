@@ -485,6 +485,8 @@ Logga in som i punkt 2.
 ##### Request #####
  ```
 {
+	"id": "XxbJYtuWvSY6xPu0",
+	"title": "Bryggkaffe",
    	"desc": "En kopp med husets bryggmalet.",
    	"price": 32
    }
@@ -494,11 +496,12 @@ Logga in som i punkt 2.
 {
 	"message": "Menu updated successfully",
 	"item": {
-	"title": "Bryggkaffe",
-	"desc": "En kopp med husets bryggmalet.",
-	"price": 32,
-	"_id": "XxbJYtuWvSY6xPu0",
-	"modifiedAt": "2024-06-12T15:46:35.599Z"
+		"title": "Bryggkaffe",
+		"desc": "En kopp med husets bryggmalet.",
+		"price": 32,
+		"_id": "XxbJYtuWvSY6xPu0",
+		"id": "XxbJYtuWvSY6xPu0",
+		"modifiedAt": "2024-06-14T10:58:49.184Z"
 	}
 }
 ``` 
