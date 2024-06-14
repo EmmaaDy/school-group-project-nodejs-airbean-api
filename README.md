@@ -460,20 +460,22 @@ Logga in som i punkt 2.
 ##### Request  ##### 
 ```
 {
-  	"title": "Gustav Adolf Bakelse",
-	"desc": "En krämig god bakelse.",
-	"price": 25
-	}
+  "id": "unik-id-värde",
+  "title": "Gustav Adolf Bakelse",
+  "desc": "En krämig god bakelse.",
+  "price": 25
+}
 ```
 ##### Response ##### 
 ```
 {
 	"message": "Menu item added successfully",
 	"item": {
-	"title": "Gustav Adolf Bakelse",
-	"desc": "En krämig god bakelse.",
-	"price": 25,
-	"createdAt": "2024-06-12T15:46:06.240Z"
+		"id": "unik-id-värde",
+		"title": "Gustav Adolf Bakelse",
+		"desc": "En krämig god bakelse.",
+		"price": 25,
+		"createdAt": "2024-06-14T08:57:20.872Z"
 	}
 }
 ```
